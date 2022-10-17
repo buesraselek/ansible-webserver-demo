@@ -1,12 +1,12 @@
 [webservers_red]
-18.184.13.248
+18.185.124.66
 
 
 [webservers_blue]
-35.159.50.49
+3.68.77.195
 
 [webservers_green]
-3.70.215.187
+52.59.191.21
 
 
 [webservers:children]
