@@ -1,0 +1,22 @@
+[webservers_red]
+18.184.13.248
+
+
+[webservers_blue]
+35.159.50.49
+
+[webservers_green]
+3.70.215.187
+
+
+[webservers:children]
+webservers_red
+webservers_blue
+webservers_green
+
+
+# PRIVATE
+# Username - ubuntu
+[webservers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/talent-academy-ec2

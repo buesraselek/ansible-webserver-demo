@@ -1,0 +1,32 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+   - name: Update the apt-get of the machine
+     apt:
+        update_cache: yes
+ 
+   - name: Install apache2
+     apt:
+       name: apache2
+       state: present
+  # - name: Copy my index.html file on the webserver
+  #   copy:
+  #   src: "index.html"
+  #   dest: "/var/www/html/"
+
+   - name: Copy the template file to the webserver
+     template:
+        src: "index.html.j2"
+        dest: "/var/www/html/index.html"
+
+
+   - name:  Restart apache2 service
+     service:
+       name: apache2
+       state: restarted
+
+
+
+
+
